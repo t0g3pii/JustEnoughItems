@@ -16,7 +16,9 @@ jobs:
           java-version: '21'
           cache: 'gradle'
       - name: Build with Gradle
-        run: ./gradlew build
+        run: |
+          ./gradlew build
+          ./gradlew :spotlessApply
       - name: Copy together artifacts
         shell: bash
         run: |
